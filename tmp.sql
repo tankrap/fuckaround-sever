@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS hempy.people (
+    "id" TEXT PRIMARY KEY NOT NULL
+);
