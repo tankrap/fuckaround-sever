@@ -137,7 +137,7 @@
       "id": "1jvzxixebm4u_IebYdd7q",
       "name": "structure",
       "x": -288,
-      "y": -408,
+      "y": -456,
       "locked": false,
       "fields": [
         {
@@ -192,6 +192,34 @@
           "primary": false,
           "unique": false,
           "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "t4e4VGgEsPWc7LJVlge1g",
+          "name": "max_units",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "IrJbfoMgIY9QXEfaqfxXP",
+          "name": "min_units",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
           "increment": false,
           "comment": "",
           "size": "",
@@ -286,89 +314,6 @@
       "color": "#19b8f7"
     },
     {
-      "id": "9zX-nGTejkq6mrsTqNoee",
-      "name": "seed_inventory",
-      "x": 48,
-      "y": -744,
-      "locked": false,
-      "fields": [
-        {
-          "name": "id",
-          "type": "TEXT",
-          "default": "",
-          "check": "",
-          "primary": true,
-          "unique": false,
-          "unsigned": true,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "id": "NEmbT_fH7rIDlpziLSX9q",
-          "size": "",
-          "values": []
-        },
-        {
-          "id": "5m8dlmShmvNNuZS8sc9Qh",
-          "name": "belongs_to",
-          "type": "TEXT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "size": "",
-          "values": []
-        },
-        {
-          "id": "FhIj6cRvAS9j5uNl3ptGZ",
-          "name": "seed",
-          "type": "TEXT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "size": "",
-          "values": []
-        },
-        {
-          "id": "XrYCV_iPlJK1mkifkjB5q",
-          "name": "amount",
-          "type": "BIGINT",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "size": "",
-          "values": []
-        },
-        {
-          "id": "xwyxg-tdWy49TZ2gSaa4k",
-          "name": "last_update",
-          "type": "TIMESTAMPTZ",
-          "default": "",
-          "check": "",
-          "primary": false,
-          "unique": false,
-          "notNull": true,
-          "increment": false,
-          "comment": "",
-          "size": "",
-          "values": []
-        }
-      ],
-      "comment": "",
-      "indices": [],
-      "color": "#7a1779"
-    },
-    {
       "id": "dzofSlyk-s1xlYWJkM1lw",
       "name": "structure_meta",
       "x": 48,
@@ -415,6 +360,20 @@
           "notNull": false,
           "increment": false,
           "comment": ""
+        },
+        {
+          "id": "yTWDyMKEYop6L3UMtR7L-",
+          "name": "flags",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
         }
       ],
       "comment": "",
@@ -1277,6 +1236,117 @@
       "comment": "",
       "indices": [],
       "color": "#e6cc25"
+    },
+    {
+      "id": "TGVH8Fq4HLE1Ny-O9u9MV",
+      "name": "in_storage",
+      "x": -1296,
+      "y": -720,
+      "locked": false,
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": false,
+          "unsigned": true,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "id": "RRr6MlQ869HFf6fkHWdxa",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "eeLBQIEkWsV_3yUZSIy8q",
+          "name": "resource",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "-RbdrRAksNvcSuSN5Htcn",
+          "name": "structure",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "eGlMgfxu5UEnphQAKca26",
+          "name": "stored_by",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "7jQbhaUhQwrD_rPyu9fDC",
+          "name": "stored_when",
+          "type": "TIMESTAMPTZ",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "Qfn4ktZh9aZ9h8uuac3re",
+          "name": "removed_when",
+          "type": "TIMESTAMPTZ",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        },
+        {
+          "id": "890qViS2b5wLdC_DUyTS1",
+          "name": "in_storage",
+          "type": "BOOLEAN",
+          "default": "FALSE",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": "",
+          "size": "",
+          "values": []
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a"
     }
   ],
   "relationships": [
@@ -1312,28 +1382,6 @@
       "deleteConstraint": "No action",
       "name": "fk_game_state_id_seed",
       "id": "Y6NAse4oxLfw5mMYQf8PW"
-    },
-    {
-      "startTableId": "CpzwZPCyesF0WELjYa7_1",
-      "startFieldId": "Crl_Mq7EAM2eui-rc52Ye",
-      "endTableId": "9zX-nGTejkq6mrsTqNoee",
-      "endFieldId": "5m8dlmShmvNNuZS8sc9Qh",
-      "cardinality": "one_to_many",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_people_id_seed_inventory",
-      "id": "zGTPY5QNtAb3Sgm2lpo2d"
-    },
-    {
-      "startTableId": "OAm___98i1AHfIk85mSRq",
-      "startFieldId": "oR1HSvJy5LGaB3I-Q8cjS",
-      "endTableId": "9zX-nGTejkq6mrsTqNoee",
-      "endFieldId": "FhIj6cRvAS9j5uNl3ptGZ",
-      "cardinality": "one_to_many",
-      "updateConstraint": "No action",
-      "deleteConstraint": "No action",
-      "name": "fk_seed_id_seed_inventory",
-      "id": "u0w2W2kCFJFkUkARGyUj9"
     },
     {
       "startTableId": "1jvzxixebm4u_IebYdd7q",
@@ -1576,9 +1624,54 @@
       "deleteConstraint": "No action",
       "name": "fk_plant_id_previous_planted",
       "id": "P6l_ubflUQ5BIS4Scf4OJ"
+    },
+    {
+      "startTableId": "1jvzxixebm4u_IebYdd7q",
+      "startFieldId": "bQfapZM9OntjxnEmPV0X_",
+      "endTableId": "TGVH8Fq4HLE1Ny-O9u9MV",
+      "endFieldId": "-RbdrRAksNvcSuSN5Htcn",
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_structure_id_in_storage",
+      "id": "aRjTmgXKx8EyIlF620gfc"
+    },
+    {
+      "startTableId": "CpzwZPCyesF0WELjYa7_1",
+      "startFieldId": "Crl_Mq7EAM2eui-rc52Ye",
+      "endTableId": "TGVH8Fq4HLE1Ny-O9u9MV",
+      "endFieldId": "eGlMgfxu5UEnphQAKca26",
+      "cardinality": "one_to_many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "fk_people_id_in_storage",
+      "id": "0VLny39zBPJBK-pXxsHJC"
     }
   ],
-  "notes": [],
+  "notes": [
+    {
+      "id": 0,
+      "x": 72,
+      "y": -600,
+      "title": "structure_meta",
+      "content": "flags in structure_meta will denote what type of structure this is. Examples: storage, facility, etc. as well as other properties",
+      "locked": true,
+      "color": "#fafaed",
+      "height": 210,
+      "width": 180
+    },
+    {
+      "id": 1,
+      "x": -1488,
+      "y": -720,
+      "title": "in_storage",
+      "content": "For in_storage, the resource text relates to other tables via their id primary key.\nExample: seed_<id> will relate to a seed with the id of \"1234\". Or, plant_<id>",
+      "locked": true,
+      "color": "#fcf7ac",
+      "height": 234,
+      "width": 180
+    }
+  ],
   "subjectAreas": [
     {
       "id": 0,
