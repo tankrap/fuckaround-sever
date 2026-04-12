@@ -1,0 +1,9 @@
+indent_style = "Block"
+reorder_imports = true
+brace_style = "AlwaysNextLine"
+max_width = 80
+comment_width = 80
+wrap_comments = true
+normalize_comments = true
+reorder_modules = true
+use_field_init_shorthand = true
