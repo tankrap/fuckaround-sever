@@ -3,3 +3,4 @@ log_level = "debug"
 migrations = "./migrations"
 host = "127.0.0.1"
 port = 8001
+redis = "redis://localhost:6379"
