@@ -1,4 +1,5 @@
 use crate::{
+    config::Config,
     db::Database,
     emailer::{self, Emailer},
 };
@@ -23,6 +24,7 @@ use std::{str::FromStr as _, sync::Arc};
 pub struct App
 {
     pub database: Arc<Database>,
+    pub config: Config,
     // pub nats: Arc<async_nats::client::Client>,
     // pub merge_queue: MergeQueue,
     // pub id_gen: Arc<LockMonoUlidGenerator<ULID, MonotonicClock,
@@ -35,7 +37,7 @@ pub struct App
 
 impl App
 {
-    pub async fn init(database: Arc<Database>) -> Result<Self>
+    pub async fn init(database: Arc<Database>, config: Config) -> Result<Self>
     {
         let password = database.get_config::<String>("smtp_password").await;
         let username = database.get_config::<String>("smtp_username").await;
@@ -57,6 +59,10 @@ impl App
         };
         let emailer = Emailer::init(smtp_config);
 
-        Ok(Self { database, emailer })
+        Ok(Self {
+            database,
+            emailer,
+            config,
+        })
     }
 }

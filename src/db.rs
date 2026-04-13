@@ -14,17 +14,16 @@ pub struct Database
 
 impl Database
 {
-    pub async fn init(dsn: &str, migrations: &str) -> Result<Self>
+    pub async fn init(dsn: &str, migrations: &str, redis: &str) -> Result<Self>
     {
         let _current_env =
             std::env::var("CURRENT_ENV").unwrap_or("dev".to_string());
-        let redis_url = std::env::var("GOIT_REDIS_URL").unwrap();
         let pool = Pool::connect(dsn).await.unwrap();
         let migrator = Migrator::new(Path::new(migrations)).await.unwrap();
-        migrator.run(&pool).await.unwrap();
+        //migrator.run(&pool).await.unwrap();
         Ok(Self {
             inner: pool,
-            redis: ConnectionManager::new(Client::open(redis_url).unwrap())
+            redis: ConnectionManager::new(Client::open(redis).unwrap())
                 .await?,
         })
     }
